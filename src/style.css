@@ -9,3 +9,15 @@
 .marLef0_5rem {
   margin-left: 0.5rem;
 }
+
+.btn {
+  font-size: 1rem;
+  padding: 1.5rem 3rem;
+  border: none;
+  border-radius: 2rem;
+}
+
+.btnYel {
+  color: white;
+  background-color: rgba(232, 210, 89, 255);
+}

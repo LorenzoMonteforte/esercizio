@@ -11,9 +11,13 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 /* add icons to the library */
-library.add(faCaretDown)
+library.add(faCaretDown, faChevronLeft, faMagnifyingGlass, faUserPlus, faChevronRight)
 
 createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)
