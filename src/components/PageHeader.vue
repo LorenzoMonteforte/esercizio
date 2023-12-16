@@ -89,14 +89,15 @@ export default {
             <div>
                 <Carousel :dataCarousel="dataCarousel" @invokeChangeBackground="changeBackground" />
             </div>
+            <img src="../assets/img/Wave-1.png" alt="Divisore a forma di onda">
         </div>
     </header>
 </template>
 
 <style scoped>
 header {
-    height: 1000px;
-    background-color: red;
+    background-image: url("../assets/img/theme_slider1_bg-1.jpg");
+    background-size: cover;
 }
 
 #opaRed>div:first-child {
@@ -131,7 +132,7 @@ header {
     justify-content: flex-end;
 }
 
-#opaRed>div:last-child {
+#opaRed>div:nth-child(2) {
     margin-top: 6rem;
 }
 
@@ -139,5 +140,12 @@ header {
     height: 100%;
     background-color: rgba(218, 108, 110, 0.9);
     padding: 3rem 3rem 0;
+    overflow: hidden;
+}
+
+#opaRed>img {
+    margin-top: 6rem;
+    width: 100%;
+    scale: 1.75;
 }
 </style>
