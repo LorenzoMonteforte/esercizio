@@ -21,3 +21,7 @@
   color: white;
   background-color: rgba(232, 210, 89, 255);
 }
+
+p {
+  line-height: 1.5;
+}
