@@ -1,30 +1,57 @@
 <script>
+import DescriptionImage from './DescriptionImage.vue';
 export default {
     name: "Section2",
+    components: {
+        DescriptionImage
+    },
     data() {
         return {
             faculties: [
                 {
                     srcImg: "img/Gavel-v2.png",
-                    title: "Law Faculty"
+                    title: "Law Faculty",
+                    srcImg2: "img/Gavel-Illustration-e1556884768193.png",
+                    paragraph: "Learning from world-leading academics and practitioners, you'll not only receive an outstanding grounding in the theory of law, but you will be able to understand how those principles are applied in practice through a range of student-led activities and competitions."
                 },
                 {
                     srcImg: "img/Coins-tabs-v2.png",
-                    title: "Economy"
+                    title: "Economy",
+                    srcImg2: "img/Economy.png",
+                    paragraph: "Economics focuses on the behaviour and interactions of economic agents and how economies work. Microeconomics analyzes basic elements in the economy, including individual agents and markets, their interactions, and the outcomes of interactions, including unemployment of resource."
                 },
                 {
                     srcImg: "img/Medicine-tabs-v2.png",
-                    title: "Medicine"
+                    title: "Medicine",
+                    srcImg2: "img/Medicine.png",
+                    paragraph: "Medicine is the science and practice of estabilishing the diagnosis, prognosis, treatment, and prevention of disease. Medicine encompasses a variety of health care practices evolved to maintain and restore health by the prevention and treatment of illness."
                 },
                 {
                     srcImg: "img/Computer-tabs-v2.png",
-                    title: "Computer Science"
+                    title: "Computer Science",
+                    srcImg2: "img/Computer-Science.png",
+                    paragraph: "Computer science is the study of processes that interact with data and that can be represented as data in the form of programs. It enables the use of algorithms to manipulate, store, and communicate digital information. A computer scientist studies the theory of computation software systems."
                 },
                 {
                     srcImg: "img/Palette-tabs-v2.png",
-                    title: "Graphic Design"
+                    title: "Graphic Design",
+                    srcImg2: "img/Graphic-Design.png",
+                    paragraph: "Graphic design is the process of visual communication and problem-solving through the use of typography, photography and illustration. The field is considered a subset of visual communication and communication design, but sometimes the term ''graphic design'' is used synonymously.'"
                 }
-            ]
+            ],
+            content: {
+                title: "",
+                paragraph: "",
+                button: "Read More",
+                srcImg: "",
+                altImg: ""
+            },
+            style: {
+                descriptionImage: false,
+                centredImage: true,
+                icon: false,
+                btnColor: "red"
+            }
         }
     },
     methods: {
@@ -48,7 +75,14 @@ export default {
             cards[indexCard].style.backgroundColor = "rgba(218, 108, 110, 1)";
             cards[indexCard].style.border = "1px solid rgba(218, 108, 110, 1)";
             squareCards[indexCard].style.display = "block";
+            this.content.title = this.faculties[indexCard].title;
+            this.content.paragraph = this.faculties[indexCard].paragraph;
+            this.content.srcImg = this.faculties[indexCard].srcImg2;
+            this.content.altImg = this.faculties[indexCard].title;
         }
+    },
+    mounted() {
+        this.selectCard(0);
     }
 }
 </script>
@@ -68,13 +102,12 @@ export default {
                 <div class="squareCard"></div>
             </div>
         </div>
+        <DescriptionImage :content="content" :style="style" />
     </section>
 </template>
 
 <style scoped>
 section {
-    height: 1000px;
-    background-color: red;
     padding-top: 6rem;
 }
 
@@ -94,11 +127,12 @@ section>div:first-of-type>p {
     text-align: center;
 }
 
-section>div:last-of-type {
+section>div:nth-of-type(2) {
     background-color: white;
     margin-top: 2rem;
     padding: 0 5rem;
     display: flex;
+    box-shadow: 1px 1px 25px 1px lightgray;
 }
 
 .card {
